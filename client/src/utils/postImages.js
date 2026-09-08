@@ -1,4 +1,6 @@
-const API_ORIGIN = "http://localhost:5000";
+import { API_URL } from "./api";
+
+const API_ORIGIN = API_URL;
 
 export function getPostImageUrl(imagePath) {
     if (!imagePath) return "";

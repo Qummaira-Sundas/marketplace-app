@@ -11,8 +11,9 @@ import {
     useInfiniteScrollTrigger,
 } from "../hooks/useInfiniteScroll";
 import InfiniteScrollFooter from "../components/InfiniteScrollFooter";
+import { API_URL } from "../utils/api";
 
-const API_BASE = "http://localhost:5000/api/posts";
+const API_BASE = `${API_URL}/api/posts`;
 
 function Marketplace() {
     const { showToast } = useToast();
@@ -151,7 +152,7 @@ function Marketplace() {
             const token = localStorage.getItem("accessToken");
 
             const response = await fetch(
-                `http://localhost:5000/api/posts/${selectedPostId}`,
+                `${API_URL}/api/posts/${selectedPostId}`,
                 {
                     method: "DELETE",
                     headers: {

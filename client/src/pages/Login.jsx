@@ -9,7 +9,7 @@ import {
     shouldShowFieldError,
     touchAllFields,
 } from "../utils/formValidation";
-
+import { API_URL } from "../utils/api";
 function Login() {
     const navigate = useNavigate();
     const { showToast } = useToast();
@@ -66,7 +66,7 @@ function Login() {
         setLoading(true);
 
         try {
-            const response = await fetch("http://localhost:5000/api/auth/login", {
+            const response = await fetch(`${API_URL}/api/auth/login`, {
                 method: "POST",
                 credentials: "include",
                 headers: {

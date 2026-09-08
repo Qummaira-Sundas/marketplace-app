@@ -14,6 +14,7 @@ import { formatPrice, formatRelativeTime } from "../utils/formatters";
 import { getPostImages } from "../utils/postImages";
 import { useUserLists } from "../context/UserListsContext";
 import { useToast } from "../context/ToastContext";
+import { API_URL } from "../utils/api";
 
 function PostDetail() {
     const { id } = useParams();
@@ -27,7 +28,7 @@ function PostDetail() {
         const fetchPost = async () => {
             try {
                 const response = await fetch(
-                    `http://localhost:5000/api/posts/${id}`
+                    `${API_URL}/api/posts/${id}`
                 );
 
                 const data = await response.json();

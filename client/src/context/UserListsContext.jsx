@@ -6,9 +6,10 @@ import {
     useMemo,
     useState,
 } from "react";
+import { API_URL } from "../utils/api";
 
 const UserListsContext = createContext(null);
-const API = "http://localhost:5000/api";
+const API = `${API_URL}/api`;
 
 const authHeaders = () => {
     const token = localStorage.getItem("accessToken");

@@ -8,7 +8,7 @@ import { useToast } from "../context/ToastContext";
 import { useUserLists } from "../context/UserListsContext";
 import { useInfiniteScroll } from "../hooks/useInfiniteScroll";
 import InfiniteScrollFooter from "../components/InfiniteScrollFooter";
-
+import { API_URL } from "../utils/api";
 function Favorites() {
     const { showToast } = useToast();
     const { favoriteIds, isOwner, ready } = useUserLists();
@@ -24,8 +24,8 @@ function Favorites() {
             const token = localStorage.getItem("accessToken");
 
             const response = await fetch(
-                "http://localhost:5000/api/posts/favorites",
-                {
+                `${API_URL}/api/posts/favorites`,
+               {
                     headers: {
                         Authorization: `Bearer ${token}`,
                     },
@@ -77,7 +77,7 @@ function Favorites() {
             const token = localStorage.getItem("accessToken");
 
             const response = await fetch(
-                `http://localhost:5000/api/posts/${selectedPostId}`,
+                `${API_URL}/api/posts/${selectedPostId}`,
                 {
                     method: "DELETE",
                     headers: {

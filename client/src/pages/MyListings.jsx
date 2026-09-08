@@ -7,6 +7,7 @@ import DeleteConfirmModal from "../components/DeleteConfirmModal";
 import { useToast } from "../context/ToastContext";
 import { useInfiniteScroll } from "../hooks/useInfiniteScroll";
 import InfiniteScrollFooter from "../components/InfiniteScrollFooter";
+import { API_URL } from "../utils/api";
 
 function MyListings() {
     const { showToast } = useToast();
@@ -22,7 +23,7 @@ function MyListings() {
             const token = localStorage.getItem("accessToken");
 
             const response = await fetch(
-                "http://localhost:5000/api/posts/my",
+                `${API_URL}/api/posts/my`,
                 {
                     headers: {
                         Authorization: `Bearer ${token}`,
@@ -56,7 +57,7 @@ function MyListings() {
             const token = localStorage.getItem("accessToken");
 
             const response = await fetch(
-                `http://localhost:5000/api/posts/${selectedPostId}`,
+               `${API_URL}/api/posts/${selectedPostId}`,
                 {
                     method: "DELETE",
                     headers: {

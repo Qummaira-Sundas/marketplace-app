@@ -8,7 +8,7 @@ import {
     shouldShowFieldError,
     touchAllFields,
 } from "../utils/formValidation";
-
+import { API_URL } from "../utils/api";
 function Signup() {
     const navigate = useNavigate();
     const { showToast } = useToast();
@@ -84,7 +84,7 @@ function Signup() {
 
         try {
             const response = await fetch(
-                "http://localhost:5000/api/auth/signup",
+                `${API_URL}/api/auth/signup`,
                 {
                     method: "POST",
                     headers: {

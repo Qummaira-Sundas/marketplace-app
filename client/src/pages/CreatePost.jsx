@@ -24,10 +24,9 @@ import {
 
 } from "../utils/formValidation";
 
+import { API_URL } from "../utils/api";
 
-
-const API_ORIGIN = "http://localhost:5000";
-
+const API_ORIGIN = API_URL;
 const MAX_IMAGES = 10;
 const MAX_IMAGE_SIZE_BYTES = 5 * 1024 * 1024;
 
@@ -749,8 +748,8 @@ function CreatePost() {
             const token = localStorage.getItem("accessToken");
 
             const url = editingPost
-                ? `http://localhost:5000/api/posts/${editingPost._id}`
-                : "http://localhost:5000/api/posts";
+                ? `${API_URL}/api/posts/${editingPost._id}`
+                : `${API_URL}/api/posts`;
 
             const method = editingPost ? "PUT" : "POST";
 
@@ -786,7 +785,7 @@ function CreatePost() {
 
                 if (orderedPaths.length) {
                     const reorderResponse = await fetch(
-                        `http://localhost:5000/api/posts/${editingPost._id}/image-order`,
+                        `${API_URL}/api/posts/${editingPost._id}/image-order`, 
                         {
                             method: "PATCH",
                             headers: {

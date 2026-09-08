@@ -1,5 +1,7 @@
+import { API_URL } from "./api";
 const PROFILE_IMAGE_KEY = "userProfileImage";
-const API_ORIGIN = "http://localhost:5000";
+
+const API_ORIGIN = API_URL;
 const API_BASE = `${API_ORIGIN}/api/users`;
 const MAX_IMAGE_SIZE_BYTES = 5 * 1024 * 1024;
 
