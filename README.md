@@ -9,6 +9,10 @@ react-todo-app/
 ├── README.md
 └── .gitignore
 ```
+## Tech Stack
+Frontend: React, Vite, JavaScript, HTML, CSS
+Backend: Node.js, Express.js, MongoDB, Mongoose
+Cloud & Deployment: AWS EC2, Amazon S3, Nginx, PM2, Vercel, Cloudflare Tunnel
 
 ## Setup
 
